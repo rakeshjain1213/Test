@@ -1,0 +1,129 @@
+Tibco Cloud Integration (TCI) :
+
+Web Based Connectivity- Drag and Drop in Browser - Connect capability
+Powered by Tibco Scribe
+For business users and business application owners to simplify and accelerate cloud connectivity for data across SaaS and other business applications
+
+Model Driven Development - Critical Integrations and container based apps - Integrate capability
+Powered by Tibco BusinessWorks
+Integrate: For integration specialists to implement mission-critical integration and orchestration services, and deploy anywhere, including containers
+Deploy a TIBCO BusinessWorks app on TIBCO Cloud. Use the BusinessWorks app to integrate enterprise apps and orchestrate web services across hybrid environments.
+
+Visual Event driven design - event driven apps with visual flow designer - Develop capability
+Powered by Tibco Flogo
+Develop the flow over browser and deploy it anywhere
+Develop: For developers to build event-driven microservices and functions to support API-led application development.
+Create a new app for developing event-driven integrations, microservices, and APIs. You can run your app on TIBCO Cloud or deploy it as a function on Serverless compute. Flogo apps are based on the Flogo open source project.
+
+API Management - Manage API Lifecycle - Tibco Cloud Mashery(Tibco CloudIntegration HybridPlan)
+
+WebStudio - A web-based utility to create business rules in the application designed in the studio. This environment is best suited for business users who can define rules by using easy-to-use tools on a browser.
+
+Studio - An Eclipse environment to create the application and define the rules. This environment is most suited for developers who want to define complex rules.
+
+
+Service descriptor -> import from uri
+drag add operation(invoke opertn) -> create schema from json in resource -> create rest service
+
+API Management - Manage API Lifecycle - Tibco Cloud Mashery(Tibco CloudIntegration HybridPlan)
+
+Connectors: http://www.tibco.com/connected
+
+TCI is available on both AWS and Microsoft Azure
+
+Pay as you go(PAYG) : https://www.tibco.com/products/cloud-integration/pricing-plans
+
+Case Study: https://bit.ly/TCI_VOC
+
+TIBCO Cloud Integration is an Integration PaaS - a service that runs on a cloud platform - in this case TIBCO Cloud - and helps a business connect its digital assets together.
+
+https://www.youtube.com/playlist?list=PLnmoGGHHJldiGkcmZsen1BsY62oExCQUb : 6-8 hours
+
+https://academy.tibco.com/ : 4-6 hours
+
+https://www.youtube.com/watch?v=SwDVdlkp4-k&list=PLnmoGGHHJldiGkcmZsen1BsY62oExCQUb&index=11
+
+SoapService:
+https://www.youtube.com/watch?v=Sbt01DjANwE&list=PLnmoGGHHJldiGkcmZsen1BsY62oExCQUb&index=16
+
+Case Study:
+AIR France KLM : One unified system created by integrating many others
+CAESARS Entertainment : First casino in Las Vegas to go live with cloud based hotel management
+Desigual : 13 Digitalized shopping channels
+
+http://dneonline.com/calculator.asmx?wsdl
+
+https://integration.cloud.tibco.com/applications
+
+https://support.tibco.com/s/article/How-to-connect-to-on-premise-EMS-server-on-TCI-via-Proxy-Agent
+
+https://account.cloud.tibco.com/manage/downloads/tibtunnel
+
+first_access_key
+I39QQkmy1rS6Hd3ucvqGHNhM4LSY2Brj6YfHjlRWSqo
+
+tibtunnel configure --profile tunneljms --accessKey I39QQkmy1rS6Hd3ucvqGHNhM4LSY2Brj6YfHjlRWSqo 
+
+tibtunnel configure --profile tunneljms --accessKey V+BBQf+KbdXGmfg5ijG/KRN0kuSBL+TC8jqMxkjimqw
+
+
+tibcli bwplugin supplement ems   
+tibcli app push 0 --accessKey first_access_key
+
+tibtunnel connect -p tunneljms -s 7222:0.0.0.0:7222
+tibtunnel connect -p tunneljms -s 7222:10.247.0.232:7222
+tibtunnel connect -p tunneljms -s 7222:1.186.206.240:7222
+
+tibtunnel connect -p tunneljms -s 7222:10.247.0.232:7222 https://ap-southeast-2.integration.cloud.tibcoapps.com/tunnel/uyrib6jgx7qwibcfi2s645u72dhurhlo
+
+tibcli app scaleup 1 TestMessaging
+
+https://au.integration.cloud.tibco.com/applications
+
+
+FTL:
+https://www.tibco.com/products/tibco-messaging/downloads
+
+
+Trial:
+https://www.tibco.com/resources/product-trial-cloud/tibco-cloud-integration-free-trial
+
+
+
+TBW101: TIBCO BusinessWorks™ - Fundamentals
+TBW7001: Custom XPath Function
+TBW7002: Binary Shared Modules
+TBW7003: Build a Simple Rest Service
+TBW7004: Design Time Gestures
+TBW7005: Develop Solutions
+TBW7006: Local Application Deployment
+TBW7007: Create an Application Module
+TBW7008: Credential Based Security
+TBW7009: LDAP Based Security
+TBW7010: Use Direct Sub Process
+TBW7011: Create a ReST Service from a JSON File
+TBW7012: Working with Sub Process
+TBW7014: Exception Handling
+
+https://ap-southeast-2.integration.cloud.tibcoapps.com/4txeiijalvnm5fyqliq5apgcg4zduyim/Calculator
+
+https://support.tibco.com/s/article/Getting-error-on-testing-the-JMS-connection-in-BW-while-it-is-successful-in-BC
+
+https://au.integration.cloud.tibco.com/applications
+Sydney
+
+https://www.onlinegdb.com/online_java_compiler
+
+https://www.tibco.com/products/tibco-cloud-live-apps#products-solutions
+
+
+
+eftl can be used in mobile devices but not ftl
+for coordinating across multiplt apps we need ftl
+rest api is available for eftl not ftl
+
+tibcli org ftl --enable
+tibcli org ftl --disable
+tibcli org ftl --status
+tibcli login --org
+

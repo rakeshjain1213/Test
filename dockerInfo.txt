@@ -1,0 +1,71 @@
+docker run -d --name firstapp -e NODENAME=A.cluster -p 9191:9191  example/testapp:1.0.0-RELEASE
+docker run -d --name jobcreateprocess -e NODENAME=A.cluster -p 8080:8080  example/gtosplus_ops_ydms_sb_app:latest
+
+docker run -d --name jobcreateprocess -e NODENAME=A.cluster -p 8080:8080  example/gtosplus_ops_ydms_sb_app:latest
+
+docker inspect -f "{{ .NetworkSettings.IPAddress }}" firstapp
+
+
+docker exec firstapp epadmin display services servicetype=node
+
+docker exec firstapp epadmin servicename=A.cluster display node
+docker exec firstapp epadmin servicename=A.cluster display engine
+docker exec firstapp epadmin servicename=A.cluster display services
+
+
+epadmin --ad=8080 --us=tibco --pa=tibco display services
+
+
+
+docker ps
+docker stop <<containerid>>
+docker rm firstapp
+
+
+docker exec firstapp epadmin --servicename=A.cluster change password --username=sbuser --password=tibco
+
+
+docker network create example.com
+docker run -d --name nodeA -e NODENAME=A.cluster -p 9292:9191 --network example.com --hostname A.example.com example/testapp:1.0.0-RELEASE
+
+docker exec -it firstapp /bin/bash
+
+
+
+epadmin install node --application=D:\Streambase_WS_CAG\TestAppSb\target\TestAppSb-0.0.1-SNAPSHOT-ep-application.zip  --nodedirectory=C:\temp --nodename=A.cluster
+
+epadmin servicename=A.cluster start node
+epadmin servicename=A.cluster stop  node
+epadmin servicename=A.cluster remove  node
+
+Search dtmengine in taskmanager and kill that. Later you can do shift delete for the node created.
+
+docker login --username prowesssoft --password Rj@**********
+
+
+docker run -d --name appA -e NODENAME=A.cluster -p 9191:9191  example/testapp:1.0.0-RELEASE
+http://localhost:9191/HelloWorldA
+
+docker run -d --name appB -e NODENAME=B.cluster -p 9292:9292  example/testapp:1.0.0-RELEASE
+http://localhost:9292/HelloWorldB
+
+
+
+mvn clean install -Dmaven.test.skip
+
+mvn install:install-file –Dfile=D:\SbDockerdeploy\jars\as\tibdg.jar -DgroupId=javax.tibdg -DartifactId=tibdg -Dversion=4.3.0 -Dpackaging=jar
+
+Streambase logs : /var/opt/tibco/streambase
+
+
+docker load -i C:\TIBCO\ftl\6.3\docker-images\ftl-tibftlserver-6.3.0.dockerimage.xz
+
+
+docker rmi <<imageid>> (for docker image ls)
+
+
+
+installation path of sb application : var/opt/tibco/streambase/node/A.cluster/logs/
+
+
+mvn -Dplugin=install help:describe

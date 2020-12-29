@@ -1,0 +1,57 @@
+Oracle:
+orcl
+Oracle123
+
+pbdorcl
+
+SYSTEM
+Oracle123
+
+https://localhost.docker.internal:5500/em
+https://localhost:5500/em/login
+SYS
+Oracle123
+
+MySQL:
+Port : 3306
+X Protocol Port: 33060
+Password : Oracle123
+Created user:
+user : employee
+pass: employee
+configurations in : etc/my.cnf
+
+PostgreSQL:
+Password : Oracle123
+port : 5432
+http://127.0.0.1:60289/browser/
+Errors : https://www.psycopg.org/docs/errors.html
+Expressions: http://www.postgresql.cn/docs/9.1/plpgsql-control-structures.html
+Json Functions: https://www.postgresql.org/docs/10/functions-json.html
+C:\Users\Admin\AppData\Roaming\DBeaverData\workspace6\General\Scripts
+
+-- Auto-commit : in case if the requirement is commiting intermediate Transactions.
+-- Manual commit: in case if the requirement is committing all or none.
+
+Installation Directory: C:\Program Files\PostgreSQL\12
+Server Installation Directory: C:\Program Files\PostgreSQL\12
+Data Directory: C:\Program Files\PostgreSQL\12\data
+Database Port: 5432
+Database Superuser: postgres
+Operating System Account: NT AUTHORITY\NetworkService
+Database Service: postgresql-x64-12
+Command Line Tools Installation Directory: C:\Program Files\PostgreSQL\12
+pgAdmin4 Installation Directory: C:\Program Files\PostgreSQL\12\pgAdmin 4
+
+
+
+Window Service name:
+MySQL80
+
+CAG-DEV
+Host : 13.67.70.159
+username:remoteuser
+pass:Cag@Remote#987
+show databases;
+use bocsapp;
+show tables;

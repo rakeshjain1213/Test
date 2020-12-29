@@ -1,0 +1,142 @@
+Sonar Rules:
+sonar-scanner.bat -D"sonar.projectKey=gtosplus_ops_hcs" -D"sonar.sources=." -D"sonar.host.url=http://13.67.53.66:19000" -D"sonar.login=2d615bd3c377cdb0774e407eb4b85b8a9d45c5bf"
+
+
+D:\HT_Code\dev-master-sb-src-gtosplus_ops_ahtcs_sb\sb\src\gtosplus_ops_ahtcs_sb\src\main\eventflow\com\psa\gtosplus\ops\ahtcs\agv_cntrl\sub
+
+
+
+/modify/add/stream[@name="InputStream"]@schema
+
+modify/add//@schema='EmpDetails' - True
+
+
+modify/add//@schema='TestEmp' - False
+
+
+/modify/add/named-schemas//schema/@name
+
+boolean(/modify/add/dynamic-variables/dynamic-variable/@name[.='xyzj'])
+
+/journal/article[contains(title, 'XPath')]
+
+contains(/modify/add/named-schemas//schema[1]/@name,modify/add//@schema)
+
+count(/modify/add/named-schemas//schema/@name)
+
+for $i in /modify/add/named-schemas//schema/@name
+return contains($i,modify/add//@schema)
+
+/modify/add/named-schemas/schema[not(contains(string-join(//@schema,"-"),@name))]
+
+/modify/add/table-schemas/table-schema/@name
+
+/modify/add//@name="table-schema" and value="Employee"
+
+
+/modify/add//@name="EmployeeDetails"
+
+
+/modify/add/data[@type="querytable"]/param[@name="table-schema" and @value="Employee"]
+
+/modify/add/box[@type="query"]//param[@name="where"]
+
+/project/groupId/text() 
+/project/artifactId/text() 
+
+/modify/add/box[@type="aggregate"]/param[@name="dimension-close-predicate.0"]/@value = /modify/add/box[@type="aggregate"]/param[@name="dimension-emit-predicate.0"]/@value
+
+
+count(/modify/add/module-reference)>1
+
+
+
+contains(/modify/add/box[@type="java"]/param[@name="javaclass"]/@value,"com.streambase.sb.operator.activespaces")
+
+
+
+/modify/add/box[@type="query"][param[@value="read"]]/output[@port="1"]/@stream
+=/modify/add/box[@type="filter"]/input[@port="1"]/@stream
+
+
+
+/modify/add/box[@type="java"][param[@value="com.streambase.sb.adapter.jms2.JMSConnect"]]/error/@stream
+=/modify/add/box[@type="outputadapter"]/input[@port="1"]/@stream
+
+
+(/modify/add/box[@type="java"][param[@value="com.streambase.sb.operator.activespaces3.ASControl"]]/error/@stream
+=/modify/add/box[@type="outputadapter"]/input[@port="1"]/@stream) and
+(/modify/add/box[@type="java"][param[@value="com.streambase.sb.operator.activespaces3.ASDelete"]]/error/@stream
+=/modify/add/box[@type="outputadapter"]/input[@port="1"]/@stream) 
+
+
+
+/modify/add/box[@type="java"]/param[@name="javaclass"]/@value[.="com.streambase.sb.adapter.jms2.JMSConsumer"]
+
+
+
+
+/modify/add/box[@type="map"]/output[@port="1"]/@stream
+=/modify/add/module-reference/input[@port="1"]/@stream
+and
+not(contains(string-join(/modify/add/box[@type="map"]/target-list/expressions/include/text(),'-'),"tuple"))
+
+
+
+/modify/add/*/@name
+
+
+not(contains(/modify/add/box[output[@stream=/modify/add/module-reference[param[@value[contains(., 'query_data')]]]/input/@stream]]/target-list/expressions/include/@field[contains(.,"get_data")],"get_data")  or /modify/add/box[output[@stream=/modify/add/module-reference[param[@value[contains(., 'query_data')]]]/input/@stream]]/target-list/expressions/include[@field="clause"][text()]!="string(null)")
+
+
+/modify/add/module-reference[param[@value[ends-with(., 'query_data')]]]
+
+/modify/add/module-reference[param[@value[contains(., 'query_data')]]]
+
+
+
+(count(/modify/add/module-reference/param[@name="file"]/@value[contains(.,".update_data")])>=1 or
+count(/modify/add/module-reference/param[@name="file"]/@value[contains(.,".delete_data")])>=1 or
+count(/modify/add/module-reference/param[@name="file"]/@value[contains(.,".put_data")])>=1)
+and
+count(/modify/add/module-reference/param[@name="file"]/@value[contains(.,"txn.transaction_handler")])<1
+
+
+count(/modify/add/type-metadata/param[@name="fully-qualified-name"]/@value[contains(.,".main.")])>=1
+and
+count(/modify/add/module-reference/param[@name="file"]/@value[contains(.,".error_handler")])<1
+
+
+count(/modify/add/import/@item)!=count(/modify/add/import/@item[.=/modify/add/*/@schema])
+
+
+not(/modify/add/stream/schema/field/@name[contains(.,"routing_key")] and /modify/add/stream/schema/field/@name[contains(.,"extension_key")])
+and
+count(/modify/add/stream/schema/field/@name[contains(.,"routing_key")]) and count(/modify/add/stream/schema/field/@name[contains(.,"extension_key")])
+
+
+(not((count(/modify/add/stream/schema/field)>0
+and
+count(/modify/add/stream/schema/field/@name[contains(.,"routing_key")])>=1
+and
+count(/modify/add/stream/schema/field/@name[contains(.,"extension_key")])>=1)
+or
+count(/modify/add/stream/schema/field)=0))
+and
+count(/modify/add/type-metadata/param[@name="fully-qualified-name"]/@value[contains(.,".sub.")])>=1
+
+count(/modify/add/type-metadata/param[@name="fully-qualified-name"]/@value[contains(.,".sub.")])>=1
+and
+count(/modify/add/error-input-stream)>0
+
+
+count(/modify/add/type-metadata/param[@name="fully-qualified-name"]/@value[contains(.,".sub.")])>=1
+and
+count(/modify/add/box[@type="java"]/param/@value[contains(.,"com.streambase.sb.operator.activespaces3")])>0
+
+
+
+(not(contains(/modify/add/box[output[@stream=/modify/add/module-reference[param[@value[contains(., 'query_data')]]]/input/@stream]]/target-list/expressions/include/@field[contains(.,"get_data")],"get_data") or /modify/add/box[output[@stream=/modify/add/module-reference[param[@value[contains(., 'query_data')]]]/input/@stream]]/target-list/expressions/include[@field="clause"][text()]!="string(null)")) and 
+
+count(/modify/add/box[output[@stream=/modify/add/module-reference[param[@value[contains(., 'query_data')]]]/input/@stream]]/target-list/expressions/include/@field[contains(.,"get_data")])>1
+

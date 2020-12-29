@@ -1,0 +1,10 @@
+docker run -d --name firstapp -e NODENAME=A.cluster -p 2000:2000 -p 10000:10000 example/testapp
+
+docker exec firstapp epadmin --servicename=A.cluster change password --username=tibco --password=secret
+
+
+docker network create example.com
+docker run -d --name nodeA -e NODENAME=A.cluster -p 2000:2000  --network example.com --hostname A.example.com example/testapp:1.0.0-RELEASE
+docker run -d --name nodeB -e NODENAME=B.cluster -p 2001:2000  --network example.com --hostname B.example.com example/testapp:1.0.0-RELEASE
+docker run -d --name nodeC -e NODENAME=C.cluster -p 2002:2000  --network example.com --hostname C.example.com example/testapp:1.0.0-RELEASE
+
